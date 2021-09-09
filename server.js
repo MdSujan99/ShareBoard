@@ -10,7 +10,7 @@ var server = app.listen(myPort);
 if(server)
 	console.log("Server is running on port"+myPort);
 
-//socket 
+//socket  setup
 var io = socket(server);
 //when a new connection is made
 io.sockets.on('connection',newConnection);
