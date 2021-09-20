@@ -8,7 +8,7 @@ const myPort = 5000;
 var app = express();
 app.use(express.static("public"));
 var server = app.listen(process.env.PORT || myPort);
-if (server) console.log("Server is running on port" + myPort);
+if (server) console.log("Server is running on port" + process.env.PORT);
 
 //socket  setup
 var io = socket(server);
