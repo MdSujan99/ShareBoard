@@ -3,7 +3,7 @@ var socket;
 function setup() {
   createCanvas(windowWidth - 50, windowHeight - 50);
   background(255);
-  socket = io.connect("https://myshareboard.herokuapp.com:" + process.env.PORT);
+  socket = io.connect("https://0.0.0.0:" + process.env.PORT);
   socket.on("mouseReply", newDraw);
 }
 
