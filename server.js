@@ -1,13 +1,13 @@
 var express = require("express");
 var socket = require("socket.io");
 
-const myPort = 80;
-// const myPort = 1234;
+// const myPort = 80;
+const myPort = 5000;
 
 //run the server
 var app = express();
 app.use(express.static("public"));
-var server = app.listen(myPort);
+var server = app.listen(process.env.PORT || myPort);
 if (server) console.log("Server is running on port" + myPort);
 
 //socket  setup
