@@ -1,4 +1,4 @@
-export let portNum = process.env.PORT;
+module.exports.portNum = process.env.PORT;
 
 var express = require("express");
 var socket = require("socket.io");
