@@ -14,7 +14,7 @@ function listen() {
   //   var port = server.address().port;
   //   var host = "localhost";
   //   var port = 3000;
-  console.log("Server is listening on " + myPort);
+  if (server) console.log("Server is listening on " + myPort);
 }
 
 app.use(express.static("public"));
