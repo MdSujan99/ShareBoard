@@ -3,7 +3,7 @@ var myPort = 3000;
 function setup() {
   createCanvas(windowWidth - 50, windowHeight - 50);
   background(255);
-  socket = io.connect("https://0.0.0.0:" + myPort);
+  socket = io.connect("http://0.0.0.0:" + myPort);
   console.log("Socket id:" + socket.id);
   socket.on("mouseReply", newDraw);
 }
