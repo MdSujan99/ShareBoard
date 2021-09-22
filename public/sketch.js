@@ -1,10 +1,9 @@
-// import { portNum } from "../server";
 var socket;
 
 function setup() {
   createCanvas(windowWidth - 50, windowHeight - 50);
   background(255);
-  socket = io.connect("http://0.0.0.0:" + myPort);
+  socket = io.connect("http://0.0.0.0:" + process.env.PORT);
   socket.on("mouseReply", newDraw);
 }
 
