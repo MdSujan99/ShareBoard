@@ -1,10 +1,10 @@
 var socket;
-var myPort = 3000;
+// var myPort = 3000;
 function setup() {
   createCanvas(windowWidth - 50, windowHeight - 50);
   background(255);
-  socket = io.connect("https://my-shareboard.herokuapp.com/:" + myPort);
-  console.log("Socket id:" + socket.id);
+  socket = io();
+  if (socket) console.log("Socket id:" + socket.id);
   socket.on("mouseReply", newDraw);
 }
 

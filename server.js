@@ -1,8 +1,8 @@
 var express = require("express");
 var socket = require("socket.io");
 
-const myPort = 3000;
-// const myPort = process.env.PORT || 3000;
+// const myPort = 3000;
+const myPort = process.env.PORT || 3000;
 
 //run the server
 var app = express();
@@ -23,15 +23,13 @@ app.use(express.static("public"));
 var io = socket(server);
 
 //when a new connection is made
-io.sockets.on("connection", newConnection);
-function newConnection(socket) {
+io.sockets.on("connection", (socket) => {
   console.log("new connection\nsocket id:" + socket.id + "\n");
-
-  socket.on("mouse", function (data) {
+  socket.on("mouse", (data) => {
     console.log(data);
     socket.broadcast.emit("mouseReply", data);
   });
-  socket.on("disconnect", function () {
+  socket.on("disconnect", () => {
     console.log("Cient has disconnected");
   });
-}
+});
