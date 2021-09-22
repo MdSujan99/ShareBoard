@@ -1,8 +1,8 @@
 var express = require("express");
 var socket = require("socket.io");
 
-const myPort = 3000;
-// const myPort = process.env.PORT || 3000;
+// const myPort = 3000;
+const myPort = process.env.PORT || 3000;
 
 //run the server
 var app = express();
