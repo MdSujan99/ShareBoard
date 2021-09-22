@@ -1,19 +1,19 @@
 var express = require("express");
 var socket = require("socket.io");
 
-// const myPort = 1234;
+const myPort = process.env.PORT || 3000;
 
 //run the server
 var app = express();
 app.use(express.static("public"));
-var server = app.listen(3000, listen);
+var server = app.listen(myPort, listen);
 
 function listen() {
   //   var host = server.address().address;
   //   var port = server.address().port;
-  var host = "localhost";
-  var port = 3000;
-  console.log("Server is listening on http//" + host + ":" + port);
+  //   var host = "localhost";
+  //   var port = 3000;
+  console.log("Server is listening on " + myPort);
 }
 
 app.use(express.static("public"));
